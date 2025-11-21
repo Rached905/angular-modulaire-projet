@@ -1,0 +1,53 @@
+<div class="suggestions-container">
+  <h1>Suggestions List</h1>
+
+  <!-- Barre de recherche avec two-way binding -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search for a suggestion"
+      class="search-input">
+  </div>
+
+  <!-- Liste des suggestions en cards horizontales -->
+  <div class="suggestions-list">
+    <div class="suggestion-card" *ngFor=" let suggestion of suggestion">
+
+      <!-- Titre de la suggestion -->
+      <h3 class="suggestion-title">{{suggestion.title}}   </h3>
+
+      <!-- Catégorie et Date -->
+      <div class="suggestion-meta">
+        <span class="suggestion-category">{{suggestion.category}}</span>
+        <span class="suggestion-date">{{suggestion.date}}</span>
+      </div>
+
+      <!-- Description -->
+      <p class="suggestion-description">{{suggestion.description}}</p>
+
+      <!-- Statut -->
+      <div class="suggestion-status" >
+          <span [ngStyle]="{'color': suggestion.status === 'acceptee' ? 'green' : (suggestion.status === 'refusee' ? 'red' : 'orange')}"> {{suggestion.status}}</span>
+      </div>
+
+      <!-- Boutons d'action -->
+      <div class="action-buttons" *ngIf="suggestion.status !== 'refusee'">
+        <button class="like-button"
+        (click)="likeSuggestion(suggestion)">
+          <span>{{suggestion.likes}} 👍</span>  Like</button>
+
+        <button
+          class="favorite-button"
+          (click)="addToFavorites(suggestion)"> 
+          <span *ngIf="suggestion.favorite" style="color: gold; margin-left: 5px;">⭐</span>  
+          Favorite</button>       
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Message si aucune suggestion trouvée -->
+  <div class="no-results">
+    <p>Aucune suggestion trouvée.</p>
+  </div>
+</div>
