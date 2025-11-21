@@ -1,15 +1,18 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Node dependencies
+/node_modules/
 
-# Compiled output
-/dist
-/tmp
-/out-tsc
-/bazel-out
+# Build folders
+/dist/
+/out-tsc/
+/tmp/
+/bazel-out/
+/.angular/cache/
 
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
+# Logs
+npm-debug.log*
+yarn-error.log*
+testem.log
+libpeerconnection.log
 
 # IDEs and editors
 .idea/
@@ -20,24 +23,29 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
+# VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# History folder (extension/plugin specific)
 .history/*
 
-# Miscellaneous
-/.angular/cache
+# Sass & Typings
 .sass-cache/
-/connect.lock
+typings/
+
+# Coverage reports
 /coverage
-/libpeerconnection.log
-testem.log
-/typings
+
+# Screenshots or test outputs
 __screenshots__/
 
 # System files
 .DS_Store
 Thumbs.db
+
+# Optional local environments (API keys, secrets)
+/src/environments/environment.local.ts
