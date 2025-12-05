@@ -40,7 +40,13 @@
           class="favorite-button"
           (click)="addToFavorites(suggestion)"> 
           <span *ngIf="suggestion.favorite" style="color: gold; margin-left: 5px;">⭐</span>  
-          Favorite</button>       
+          Favorite</button>
+
+        <button
+          class="details-button"
+          [routerLink]="['/suggestions', suggestion.id]">
+          Details
+        </button>       
       </div>
 
     </div>
@@ -51,3 +57,4 @@
     <p>Aucune suggestion trouvée.</p>
   </div>
 </div>
+

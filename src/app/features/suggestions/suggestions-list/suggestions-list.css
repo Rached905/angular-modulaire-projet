@@ -212,6 +212,30 @@ h1 {
   font-size: 18px;
 }
 
+/* Bouton Details */
+.details-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.details-button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.details-button:active {
+  transform: scale(0.98);
+}
+
 /* Message si aucun résultat */
 .no-results {
   text-align: center;
@@ -239,3 +263,4 @@ h1 {
     gap: 5px;
   }
 }
+

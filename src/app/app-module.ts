@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Header } from './core/header/header';
 import { Footer } from './core/footer/footer';
-import { ListSuggestions } from './core/list-suggestions/list-suggestions';
+import { Home } from './core/home/home';
+import { Notfound } from './core/notfound/notfound';
 
 @NgModule({
   declarations: [
     App,
     Header,
     Footer,
-    ListSuggestions
+    Home,
+    Notfound
   ],
   imports: [
     BrowserModule,
